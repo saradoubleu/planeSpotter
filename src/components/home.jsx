@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import ReactDOM from "react-dom";
-// import { Reach, Link } from "@reach/router";
+import Navigation from "./nav-bar";
 
 class Home extends Component {
   constructor(props) {
@@ -8,7 +7,12 @@ class Home extends Component {
   }
 
   render() {
-    return <div>Welcome to Plane Spotters Home</div>;
+    return (
+      <div>
+        <h1>Welcome to Plane Spotters Home</h1>
+        <Navigation />
+      </div>
+    );
   }
 }
 

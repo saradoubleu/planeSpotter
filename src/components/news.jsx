@@ -1,37 +1,37 @@
 import React, { Component } from "react";
 
+const NEWS_API_KEY = `${process.env.REACT_APP_NEWS_API_KEY}`;
+const NEWS_URL =
+  "https://newsapi.org/v2/everything?q=(YYZ OR YTZ)&language=en&pageSize=10&apiKey=" +
+  NEWS_API_KEY;
+
 class News extends Component {
   constructor() {
     super();
-    //API Key 4f178c1a6fde4aec9380850af1c2b258
     this.state = {
-      name: [],
-      author: [],
       title: [],
+      author: [],
+      newsSource: [],
+      pic: [],
       description: [],
-      url: [],
-      publishedAt: []
+      url: []
     };
   }
 
   componentDidMount() {
-    fetch(
-      "https://newsapi.org/v2/everything?q=(YYZ OR YTZ)&language=en&apiKey=4f178c1a6fde4aec9380850af1c2b258"
-    )
+    //request - News related to Pearson and Billy Bishop (english only)
+    fetch(NEWS_URL)
       .then(results => {
         return results.json();
       })
       .then(data => {
-        console.log("DATA***", data.articles);
         let newsData = data.articles.map(ntitle => {
-          console.log("TITLES***", ntitle);
           return (
             <div>
               <ul key={ntitle.results}>
                 <a href={ntitle.url} target="_blank">
                   <li>
                     <h3>{ntitle.title}</h3>
-                    <br />
                     {ntitle.author}
                     <br />
                     {ntitle.source.name}
@@ -46,10 +46,10 @@ class News extends Component {
           );
         });
         this.setState({ title: newsData });
-        console.log("TITLE****", this.state.ntitle);
       });
   }
   render() {
+    console.log(NEWS_API_KEY);
     return (
       <div>
         {" "}

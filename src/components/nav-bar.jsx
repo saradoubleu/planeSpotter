@@ -3,7 +3,6 @@ import { Router, Link } from "@reach/router";
 
 let Home = () => (
   <div>
-    <h1>Home</h1>
     <nav>
       <Link to="/"> Home </Link> | <Link to="airplanes"> Airplanes </Link> |{" "}
       <Link to="airports"> Airports </Link>|{" "}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navigation from "./nav-bar";
+import News from "./news";
 
 class Home extends Component {
   constructor(props) {
@@ -9,8 +10,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to Plane Spotters Home</h1>
+        <h1>Welcome to YYZ Plane Spotters</h1>
         <Navigation />
+        <News />
       </div>
     );
   }

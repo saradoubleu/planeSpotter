@@ -28,17 +28,19 @@ class News extends Component {
           return (
             <div>
               <ul key={ntitle.results}>
-                <li>
-                  <h3>{ntitle.title}</h3>
-                  <br />
-                  {ntitle.author}
-                  <br />
-                  {ntitle.source.name}
-                  <br />
-                  <img src={ntitle.urlToImage} width="100" />
-                  <br />
-                  {ntitle.description}
-                </li>
+                <a href={ntitle.url} target="_blank">
+                  <li>
+                    <h3>{ntitle.title}</h3>
+                    <br />
+                    {ntitle.author}
+                    <br />
+                    {ntitle.source.name}
+                    <br />
+                    <img src={ntitle.urlToImage} width="100" />
+                    <br />
+                    {ntitle.description}
+                  </li>
+                </a>
               </ul>
             </div>
           );
